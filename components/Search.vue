@@ -8,8 +8,11 @@ watch(enter, async (v) => {
     answer.value = await $fetch("/api/runModel", {
       headers: {
         question: search.value,
+        location: useStore().activeLocation,
       },
     })
+
+    answer.value = answer.value ? answer.value["response"] : "No answer found"
 
     search.value = ""
   }
@@ -20,7 +23,7 @@ watch(answer, async () => {
   if (answer.value) {
     setTimeout(() => {
       answer.value = null
-    }, 5000)
+    }, 7000)
   }
 })
 </script>
