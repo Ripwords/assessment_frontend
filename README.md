@@ -22,6 +22,8 @@ bun install
 
 ## Development Server
 
+### Make sure to run the backend first before running the frontend
+
 Start the development server on `http://localhost:3000`:
 
 ```bash
